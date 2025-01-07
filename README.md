@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏥 CuidaUm Website
 
-## Getting Started
+CuidaUm is a modern and intuitive platform designed to connect healthcare professionals with patients, providing accessible and quality healthcare services. This repository contains the source code for CuidaUm's main website.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
+## 🖼️ Preview
+
+<details>
+<summary>Click to see screenshots</summary>
+
+> ![Preview](/src/assets/preview/preview.png)
+
+</details>
+
+## 🚀 Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (version 18 or higher)
+- npm (comes with Node.js) or yarn
+- Git
+
+## 📦 Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/cuidaum-website.git
+cd cuidaum-website
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up environment variables
+```bash
+cp .env.example .env.local
+```
+Edit `.env.local` with your configuration values.
+
+## 🛠️ Development
+
+To start the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-## Learn More
+## 🌐 Development Workflow
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a new branch for your feature
+```bash
+git checkout -b feature/your-feature-name
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Make your changes and commit using semantic commit messages
+```bash
+git add .
+git commit -m "feat: add new feature"
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Push your changes and create a pull request
+```bash
+git push origin feature/your-feature-name
+```
 
-## Deploy on Vercel
+4. Wait for review and merge
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
