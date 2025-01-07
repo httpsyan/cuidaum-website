@@ -1,6 +1,6 @@
 import Image from "next/image";
-import idoso from "@/assets/idoso.png";
-import hero from "@/assets/hero-background.png";
+import examples from "@/assets/home/examples.png";
+import hero from "@/assets/home/hero-background.png";
 import { ChevronDown } from "lucide-react";
 
 export const Hero = () => (
@@ -15,7 +15,7 @@ export const Hero = () => (
       }}
     >
       <div className="relative z-10">
-        <div className="container mx-auto px-4 py-8 md:py-16">
+        <div className="container mx-auto px-4 py-8 md:py-28">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
             <div className="max-w-[641px] space-y-4 md:space-y-6 text-center lg:text-left">
               <h2 className="uppercase text-[#1C44F2] font-bold text-sm md:text-base">
@@ -67,12 +67,12 @@ export const Hero = () => (
 
             <div className="w-full lg:w-auto">
               <Image
-                src={idoso}
-                alt="Idoso sorrindo demonstrando felicidade e bem-estar"
+                src={examples.src}
+                alt="Exemplos de monitoramento de idosos"
                 width={600}
                 height={700}
                 priority
-                className="max-w-full h-auto "
+                className="max-w-full h-auto"
                 loading="eager"
               />
             </div>
