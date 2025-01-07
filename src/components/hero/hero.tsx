@@ -30,7 +30,7 @@ export const Hero = () => (
               <p className="text-[#475569] text-base md:text-lg leading-relaxed font-medium">
                 Acompanhe a saúde e o bem-estar da sua avó, tia ou de qualquer
                 ente querido, onde quer que você esteja, com a ajuda da
-                tecnologia.
+                tecnologia
               </p>
 
               <div className="relative inline-block">
