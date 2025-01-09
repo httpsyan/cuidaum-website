@@ -1,4 +1,5 @@
 import { Companies, Header, Hero, WhyUs, AlwaysCare } from "@/components";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <WhyUs />
         <AlwaysCare />
       </div>
+      <Footer />
     </main>
   );
 }
