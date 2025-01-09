@@ -6,7 +6,7 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
-      <div className="my-14 flex flex-col space-y-14">
+      <div className="mt-14 flex flex-col space-y-14">
         <Companies />
         <WhyUs />
         <AlwaysCare />
