@@ -2,7 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { LeadDatabase, leadDatabaseSchema } from "./index";
-import { createUser } from "@/app/actions/users";
+import { createLead } from "@/lib/actions/lead";
 import { toast } from "sonner";
 
 export const useLeadForm = () => {
@@ -12,7 +12,7 @@ export const useLeadForm = () => {
 
   const onSubmit: SubmitHandler<LeadDatabase> = async (data) => {
     try {
-      const result = await createUser(data);
+      const result = await createLead(data);
 
       if (result.success) {
         toast.success("Recebemos suas informações!", {
