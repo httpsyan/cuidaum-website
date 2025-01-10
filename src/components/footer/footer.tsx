@@ -21,6 +21,7 @@ export const Footer = () => {
     <footer
       className="w-full border-t py-8 md:py-12"
       aria-labelledby="footer-heading"
+      id="footer"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 lg:justify-between">

@@ -2,7 +2,7 @@ import { FaUsers } from "react-icons/fa";
 
 export const WhyUs = () => {
   return (
-    <section className="container px-4 mx-auto">
+    <section className="container px-4 mx-auto" id="about">
       <div className="flex flex-col items-center justify-center text-center">
         <h2 className="font-bold text-xl text-[#415EFF] mb-4">Por que nós?</h2>
         <p className="font-bold text-2xl sm:text-3xl md:text-4xl text-[#0D2056] text-center text-balance leading-tight mb-20">

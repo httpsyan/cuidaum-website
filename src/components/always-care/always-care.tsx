@@ -5,7 +5,7 @@ import { BiHealth, BiLogoAirbnb } from "react-icons/bi";
 
 export const AlwaysCare = () => {
   return (
-    <section className="bg-[#1C44F2] py-8 sm:py-12 md:py-16">
+    <section className="bg-[#1C44F2] py-8 sm:py-12 md:py-16" id="care">
       <div className="container mx-auto px-4">
         <header className="flex items-center flex-col space-y-8 md:space-y-12">
           <div className="bg-[#D9D9D9] w-16 h-16 sm:w-20 sm:h-20 md:w-[6.25rem] md:h-[6.25rem] rounded-2xl flex items-center justify-center">
