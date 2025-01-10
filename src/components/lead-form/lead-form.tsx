@@ -19,8 +19,6 @@ import { LoaderIcon } from "@/ui/loader-icon";
 export function LeadForm() {
   const { form, onSubmit } = useLeadForm();
 
-  console.log(form.formState.errors);
-
   return (
     <Form {...form}>
       <form

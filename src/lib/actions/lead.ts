@@ -10,7 +10,13 @@ export type LeadFormData = {
   profile: string;
 };
 
-export async function createLead(data: LeadFormData) {
+type ActionResult<T = unknown> = {
+  success: boolean;
+  message?: string;
+  data?: T;
+};
+
+export async function createLead(data: LeadFormData): Promise<ActionResult> {
   const formattedPhone = data.phone.replace(/[()\-\s]/g, "");
 
   const [emailExists, phoneExists] = await Promise.all([
@@ -19,11 +25,17 @@ export async function createLead(data: LeadFormData) {
   ]);
 
   if (emailExists) {
-    throw new Error("E-mail já cadastrado");
+    return {
+      success: false,
+      message: "E-mail já cadastrado"
+    };
   }
 
   if (phoneExists) {
-    throw new Error("Número de celular já cadastrado");
+    return {
+      success: false,
+      message: "Número de celular já cadastrado"
+    };
   }
 
   const lead = await prisma.lead.create({

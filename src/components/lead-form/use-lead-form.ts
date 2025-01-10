@@ -11,20 +11,16 @@ export const useLeadForm = () => {
   });
 
   const onSubmit: SubmitHandler<LeadDatabase> = async (data) => {
-    try {
-      const result = await createLead(data);
+    const result = await createLead(data);
 
-      if (result.success) {
-        toast.success("Recebemos suas informações!", {
-          description: "Em breve entraremos em contato com você.",
-        });
-        form.reset();
-      }
-    } catch (error: any) {
+    if (result.success) {
+      toast.success("Recebemos suas informações!", {
+        description: "Em breve entraremos em contato com você.",
+      });
+      form.reset();
+    } else {
       toast.error("Não foi possível prosseguir!", {
-        description:
-          error.message ||
-          "Por favor, verifique as informações e tente novamente.",
+        description: result.message || "Por favor, verifique as informações e tente novamente.",
       });
     }
   };
