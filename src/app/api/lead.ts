@@ -27,14 +27,14 @@ export async function createLead(data: LeadFormData): Promise<ActionResult> {
   if (emailExists) {
     return {
       success: false,
-      message: "E-mail já cadastrado"
+      message: "E-mail já cadastrado",
     };
   }
 
   if (phoneExists) {
     return {
       success: false,
-      message: "Número de celular já cadastrado"
+      message: "Número de celular já cadastrado",
     };
   }
 

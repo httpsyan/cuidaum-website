@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { LeadDatabase, leadDatabaseSchema } from "./index";
-import { createLead } from "@/lib/actions/lead";
 import { toast } from "sonner";
+import { createLead } from "@/app/api/lead";
 
 export const useLeadForm = () => {
   const form = useForm<LeadDatabase>({
@@ -20,7 +19,9 @@ export const useLeadForm = () => {
       form.reset();
     } else {
       toast.error("Não foi possível prosseguir!", {
-        description: result.message || "Por favor, verifique as informações e tente novamente.",
+        description:
+          result.message ||
+          "Por favor, verifique as informações e tente novamente.",
       });
     }
   };
