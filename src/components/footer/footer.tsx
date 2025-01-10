@@ -119,9 +119,9 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 mt-8 border-t border-gray-200">
-          <p className="text-[#6F6C90] text-sm md:text-base order-2 md:order-1">
-            © 2024 CuidaUm | Rio de Janeiro - RJ
-          </p>
+            <p className="text-[#6F6C90] text-sm md:text-base order-2 md:order-1">
+            © {new Date().getFullYear()} CuidaUm | Rio de Janeiro - RJ
+            </p>
 
           <div className="flex items-center gap-4 order-1 md:order-2">
             <Link
