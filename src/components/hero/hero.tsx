@@ -5,9 +5,12 @@ import examples from "@/assets/home/examples.png";
 import hero from "@/assets/home/hero-background.png";
 import { ChevronDown } from "lucide-react";
 import useScrollToSection from "@/hooks/scroll-to-section";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const Hero = () => {
   const scrollToSection = useScrollToSection();
+  const { ref, isInView } = useScrollAnimation();
 
   return (
     <>
@@ -15,6 +18,7 @@ export const Hero = () => {
         className="relative"
         aria-label="Seção principal de monitoramento de idosos"
         id="initial"
+        ref={ref}
         style={{
           backgroundImage: `url(${hero.src})`,
           backgroundSize: "cover",
@@ -22,9 +26,14 @@ export const Hero = () => {
         }}
       >
         <div className="relative z-10">
-          <div className="container mx-auto px-4 py-8 md:py-28">
+          <div className="container mx-auto px-4 py-8 md:py-40">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-              <div className="max-w-[641px] space-y-4 md:space-y-6 text-center lg:text-left">
+              <motion.div
+                className="max-w-[641px] space-y-4 md:space-y-6 text-center lg:text-left"
+                initial={{ opacity: 0, x: -50 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5 }}
+              >
                 <h2 className="uppercase text-[#1C44F2] font-bold text-sm md:text-base">
                   Monitore seus idosos
                 </h2>
@@ -71,9 +80,14 @@ export const Hero = () => {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="w-full lg:w-auto">
+              <motion.div
+                className="w-full lg:w-auto"
+                initial={{ opacity: 0, x: 50 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 <Image
                   src={examples.src}
                   alt="Exemplos de monitoramento de idosos"
@@ -83,7 +97,7 @@ export const Hero = () => {
                   className="max-w-full h-auto"
                   loading="eager"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

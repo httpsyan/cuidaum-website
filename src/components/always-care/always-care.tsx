@@ -1,24 +1,54 @@
+"use client";
+
 import { Separator } from "@/ui/separator";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { BiHealth, BiLogoAirbnb } from "react-icons/bi";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const AlwaysCare = () => {
-  return (
-    <section className="bg-[#1C44F2] py-8 sm:py-12 md:py-16" id="care">
-      <div className="container mx-auto px-4">
-        <header className="flex items-center flex-col space-y-8 md:space-y-12">
-          <div className="bg-[#D9D9D9] w-16 h-16 sm:w-20 sm:h-20 md:w-[6.25rem] md:h-[6.25rem] rounded-2xl flex items-center justify-center">
-            <BiLogoAirbnb className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16" />
-          </div>
+  const { ref, isInView } = useScrollAnimation();
 
-          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-white text-center text-balance leading-tight">
+  return (
+    <section
+      className="bg-[#1C44F2] py-8 sm:py-12 md:py-16"
+      id="care"
+      ref={ref}
+    >
+      <div className="container mx-auto px-4">
+        <motion.header
+          className="flex items-center flex-col space-y-8 md:space-y-12"
+          initial={{ opacity: 0, y: -50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div
+            className="bg-[#D9D9D9] w-16 h-16 sm:w-20 sm:h-20 md:w-[6.25rem] md:h-[6.25rem] rounded-2xl flex items-center justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <BiLogoAirbnb className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16" />
+          </motion.div>
+
+          <motion.h1
+            className="font-bold text-2xl sm:text-3xl md:text-4xl text-white text-center text-balance leading-tight"
+            initial={{ opacity: 0, y: -30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             Cuidado humanizado e tecnologia integrada para proporcionar o melhor{" "}
             <br /> aos seus entes queridos. Gestão completa dos cuidados com
             idosos <br /> em uma única plataforma.
-          </h1>
+          </motion.h1>
 
-          <nav className="w-full max-w-4xl">
+          <motion.nav
+            className="w-full max-w-4xl"
+            initial={{ opacity: 0, y: -20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             <ul className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8 md:gap-20">
               <li className="w-full text-center">
                 <h2 className="uppercase text-white font-bold text-base hover:text-white/80 transition-colors">
@@ -36,14 +66,19 @@ export const AlwaysCare = () => {
                 </h2>
               </li>
             </ul>
-          </nav>
+          </motion.nav>
 
           <Separator className="h-px bg-[#6B87FF] w-full " />
-        </header>
+        </motion.header>
 
         <section>
           <div className="flex w-full flex-col md:flex-row justify-between gap-8 md:gap-12 mt-24 md:mt-44">
-            <div className="flex flex-col space-y-5 md:max-w-lg">
+            <motion.div
+              className="flex flex-col space-y-5 md:max-w-lg"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5 }}
+            >
               <h3 className="uppercase text-[#FFDE69] font-bold leading-6 text-sm md:text-base">
                 cuidados personalizados
               </h3>
@@ -81,9 +116,14 @@ export const AlwaysCare = () => {
                   <p>Suporte 24h para emergências e dúvidas</p>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="relative w-full md:max-w-xl">
+            <motion.div
+              className="relative w-full md:max-w-xl"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <Image
                 src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=3000&auto=format&fit=crop"
                 alt="Cuidadora profissional auxiliando pessoa idosa com tablet"
@@ -96,7 +136,7 @@ export const AlwaysCare = () => {
               <div className="bg-[#D9D9D9] absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center shadow-lg">
                 <BiHealth className="w-6 h-6 md:w-8 md:h-8" color="#1C44F2" />
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>

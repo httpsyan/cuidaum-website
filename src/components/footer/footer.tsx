@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import logo from "@/assets/companies/hypo.png";
 import playstore from "@/assets/companies/playstore.png";
@@ -15,11 +17,19 @@ import {
 } from "@/ui/select";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const Footer = () => {
+  const { ref, isInView } = useScrollAnimation();
+  
   return (
-    <footer
+    <motion.footer
       className="w-full border-t py-8 md:py-12"
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5 }}
       aria-labelledby="footer-heading"
       id="footer"
     >
@@ -145,6 +155,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };

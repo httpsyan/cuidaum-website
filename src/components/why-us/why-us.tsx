@@ -1,18 +1,34 @@
+"use client";
+
 import { FaUsers } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const WhyUs = () => {
+  const { ref, isInView } = useScrollAnimation();
+
   return (
-    <section className="container px-4 mx-auto" id="about">
-      <div className="flex flex-col items-center justify-center text-center">
+    <section className="container px-4 mx-auto" id="about" ref={ref}>
+      <motion.div
+        className="flex flex-col items-center justify-center text-center"
+        initial={{ opacity: 0, y: -50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="font-bold text-xl text-[#415EFF] mb-4">Por que nós?</h2>
         <p className="font-bold text-2xl sm:text-3xl md:text-4xl text-[#0D2056] text-center text-balance leading-tight mb-20">
           Com soluções inovadoras e personalizadas, oferecemos total suporte e
           cuidado para sua saúde.
         </p>
-      </div>
+      </motion.div>
 
       <div className="flex flex-col gap-12 lg:flex-row lg:gap-0 items-center justify-between text-center ">
-        <article className="flex flex-col items-center space-y-6">
+        <motion.article
+          className="flex flex-col items-center space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
           <div
             className="bg-[#D5DDFC] rounded-[10px] p-6 flex items-center justify-center"
             aria-hidden="true"
@@ -25,9 +41,14 @@ export const WhyUs = () => {
             Monitore sua saúde com ferramentas que incluem planos
             personalizados, alertas e relatórios detalhados.
           </p>
-        </article>
+        </motion.article>
 
-        <article className="flex flex-col items-center space-y-6">
+        <motion.article
+          className="flex flex-col items-center space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <div
             className="bg-[#D5DDFC] rounded-[10px] p-6 flex items-center justify-center"
             aria-hidden="true"
@@ -42,9 +63,14 @@ export const WhyUs = () => {
             Interação direta com profissionais de saúde para ajustes nas rotinas
             e feedback contínuo.
           </p>
-        </article>
+        </motion.article>
 
-        <article className="flex flex-col items-center space-y-6">
+        <motion.article
+          className="flex flex-col items-center space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <div
             className="bg-[#D5DDFC] rounded-[10px] p-6 flex items-center justify-center"
             aria-hidden="true"
@@ -59,7 +85,7 @@ export const WhyUs = () => {
             Conte com médicos, fisioterapeutas, nutricionistas e outros
             especialistas para um cuidado multidisciplinar.
           </p>
-        </article>
+        </motion.article>
       </div>
     </section>
   );

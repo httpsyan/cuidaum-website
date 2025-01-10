@@ -7,6 +7,8 @@ import triodos from "@/assets/companies/triodos.png";
 import wlink from "@/assets/companies/wlink.png";
 import { useAnimationFrame } from "framer-motion";
 import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const Companies = () => {
   const logos = [
@@ -40,8 +42,16 @@ export const Companies = () => {
     }
   });
 
+  const { ref, isInView } = useScrollAnimation();
+
   return (
-    <section className="container mx-auto px-4">
+    <motion.section 
+      className="container mx-auto px-4"
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5 }}
+    >
       <h3 className="text-[#2D3775] text-lg font-medium">
         Com confiança dos melhores
       </h3>
@@ -62,6 +72,6 @@ export const Companies = () => {
       </div>
 
       <Separator className="mt-14 h-[.0625rem] bg-[#CBD5E1]" />
-    </section>
+    </motion.section>
   );
 };
