@@ -11,8 +11,8 @@
     "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
-    "prisma": "^5.0.0",
-    "@prisma/client": "^5.0.0",
+    "prisma": "^5.4.1",
+    "@prisma/client": "^5.4.1",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-select": "^2.1.4",
