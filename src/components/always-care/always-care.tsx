@@ -39,8 +39,9 @@ export const AlwaysCare = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             Cuidado humanizado e tecnologia integrada para proporcionar o melhor{" "}
-            <br /> aos seus entes queridos. Gestão completa dos cuidados com
-            idosos <br /> em uma única plataforma.
+            <br /> para quem você quer cuidar. Gestão completa dos cuidados para
+            pessoas <br /> que precisam de um monitoramente constante para
+            manunteção da qualidade de vida.
           </motion.h1>
 
           <motion.nav
@@ -80,40 +81,38 @@ export const AlwaysCare = () => {
               transition={{ duration: 0.5 }}
             >
               <h3 className="uppercase text-[#FFDE69] font-bold leading-6 text-sm md:text-base">
-                cuidados personalizados
+                cuidados individualizados
               </h3>
 
               <h1 className="font-bold text-[#F8FAFC] text-2xl md:text-3xl lg:text-4xl">
-                Tranquilidade para sua família, conforto para seus idosos
+                Tranquilidade para sua família e conforto para quem você ama
               </h1>
 
               <p className="font-medium text-[#E2E8F0] text-sm md:text-base max-w-lg">
                 Nossa plataforma centraliza todas as informações e cuidados
-                necessários para seus entes queridos, garantindo atenção
-                integral e qualidade de vida.
+                necessários para quem você cuida, garantindo atenção integral e
+                qualidade de vida.
               </p>
 
               <ul className="flex flex-col gap-3">
                 <li className="gap-2 flex items-center text-[#E2E8F0]">
                   <Check size={24} className="text-[#E2E8F0] flex-shrink-0" />
-                  <p>Acompanhamento completo de medicações e consultas</p>
+                  <p>Cuidados especiais para idosos</p>
                 </li>
 
                 <li className="gap-2 flex items-center text-[#E2E8F0]">
                   <Check size={24} className="text-[#E2E8F0] flex-shrink-0" />
-                  <p>
-                    Comunicação direta com cuidadores e profissionais de saúde
-                  </p>
+                  <p>Proteção e carinho para crianças</p>
                 </li>
 
                 <li className="gap-2 flex items-center text-[#E2E8F0]">
                   <Check size={24} className="text-[#E2E8F0] flex-shrink-0" />
-                  <p>Monitoramento de sinais vitais e relatórios detalhados</p>
+                  <p>Apoio integral no pós-parto e para recém-nascidos</p>
                 </li>
 
                 <li className="gap-2 flex items-center text-[#E2E8F0]">
                   <Check size={24} className="text-[#E2E8F0] flex-shrink-0" />
-                  <p>Suporte 24h para emergências e dúvidas</p>
+                  <p>Assistência dedicada para pessoas com deficiências</p>
                 </li>
               </ul>
             </motion.div>
