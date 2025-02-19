@@ -3,7 +3,7 @@
 import useScrollToSection from "@/hooks/scroll-to-section";
 import { Separator } from "@/ui/separator";
 import { motion } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaHeart } from "react-icons/fa";
 
 export const Header = () => {
   const scrollToSection = useScrollToSection();
@@ -32,10 +32,13 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <motion.div
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 font-montserrat"
             whileHover={{ scale: 1.02 }}
           >
-            <span className="font-semibold text-xl">CuidaUm</span>
+            <FaHeart className="text-primary text-xl" />
+            <span className="text-xl font-semibold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+              Cuidar-sempre
+            </span>
           </motion.div>
 
           <div className="hidden md:flex items-center gap-8">

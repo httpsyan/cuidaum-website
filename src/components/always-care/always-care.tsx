@@ -3,9 +3,10 @@
 import { Separator } from "@/ui/separator";
 import { Check } from "lucide-react";
 import Image from "next/image";
-import { BiHealth, BiLogoAirbnb } from "react-icons/bi";
+import { BiHealth } from "react-icons/bi";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { FaHeart } from "react-icons/fa";
 
 export const AlwaysCare = () => {
   const { ref, isInView } = useScrollAnimation();
@@ -29,7 +30,7 @@ export const AlwaysCare = () => {
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <BiLogoAirbnb className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16" />
+            <FaHeart  size={32}/>
           </motion.div>
 
           <motion.h1
